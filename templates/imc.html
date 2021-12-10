@@ -29,13 +29,13 @@
                 <tr>
                     <td>Indice de Massa Corporal </td>
                     <td>
-                        <input type="text" name="imc" maxlength="5" step="000.01" size="5" value="imc" disabled><b></b>
+                        <input type="text" name="imc" maxlength="5" size="5" value="imc" disabled><b></b>
                     </td>
                 </tr>
                 <tr>
                     <td>Resultado </td>
                     <td>
-                        <input type="text" name="resultado" maxlength="5" size="5" step="000.01" value="resultado" disabled>
+                        <input type="text" name="resultado" maxlength="5" size="5" value="resultado" disabled>
                     </td>
                 </tr>
                 <br>
@@ -44,6 +44,11 @@
             <br>
             <button type="submit" class="btn btn-primary">Entrar</button>
             <button type="reset" class="btn btn-primary">Reiniciar</button>
+            {% for message in messages %}
+            <div align="center" font face="Montserrat">
+                <strong>Resultado: </strong>{{ message }}
+            </div>
+            {% endfor %}
             <div align="center">
                 <img src="{% static 'img/indice_imc.png'%}" alt="Índice de Imc">
             </div>
