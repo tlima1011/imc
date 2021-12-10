@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='/imc/')),
     path('imc/', views.imc),
-    #path('imc/submit', views.submit_imc)
+    path('imc/submit', views.submit_imc)
 ]

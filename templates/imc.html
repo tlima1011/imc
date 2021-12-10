@@ -4,12 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Índice IMC</title>
-    <link rel="shortcut icon" href="{% static 'images/icone-kitnet.png' %}"/>
+    <link rel="shortcut icon" href="{% static 'img/indice_calculadora.jpg' %}"/>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body>
-    <h1>Índice IMC</h1>
-
+    <form action="submit" method="POST"> {% csrf_token %}
+        <div align="center">
+            <h1>Índice IMC</h1>
+            <hr>
+            <table style="font-size: 20px">
+                <tr>
+                    <td>Massa corporal (kg): </td>
+                    <td>
+                        <input type="number" name="massa" maxlength="5" placeholder="Informe sua massa corporal">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Altura (m): </td>
+                    <td>
+                        <input type="number" name="altura" maxlength="5" placeholder="Informe sua altura">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Indice de Massa Corporal </td>
+                    <td>
+                        <input type="text" name="imc" maxlength="5" step="000.01" size="5" value="imc" disabled><b></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Resultado </td>
+                    <td>
+                        <input type="text" name="resultado" maxlength="5" size="5" step="000.01" value="resultado" disabled>
+                    </td>
+                </tr>
+                <br>
+                <br>
+            </table>
+            <br>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+            <button type="reset" class="btn btn-primary">Reiniciar</button>
+            <div align="center">
+                <img src="{% static 'img/indice_imc.png'%}" alt="Índice de Imc">
+            </div>
 </body>
 </html>
