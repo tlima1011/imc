@@ -11,13 +11,12 @@ def imc(request):
 
 def submit_imc(request):
     if request.POST:
-        massa = request.POST.get('massa')
-        altura = request.POST.get('altura')
-        m = float(input(massa))
-        a = float(input(altura))
-        imc = m / a * a
+        massa = float(input(request.POST.get('massa')))
+        altura = float(input(request.POST.get('altura')))
+        imc = massa / altura * altura
         r = ''
-        if ((imc >= 0) and ( imc <= 17 )):
+
+        if (imc >= 0) and ( imc <= 17 ):
             r = "Muito abaixo do preso"
         elif imc <= 18.5 :
             r = "Abaixo do Peso"
@@ -32,5 +31,5 @@ def submit_imc(request):
         else:
             r = "Obesidade Mórbida"
         f = str(imc + r)
-    messages.error(request, f)
+    return render(request, 'imc.html', {'imc': f})
 

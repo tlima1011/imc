@@ -17,13 +17,13 @@
                 <tr>
                     <td>Massa corporal (kg): </td>
                     <td>
-                        <input type="number" name="massa" maxlength="5" placeholder="Informe sua massa corporal">
+                        <input type="text" name="massa" maxlength="5" placeholder="Informe sua massa corporal">
                     </td>
                 </tr>
                 <tr>
                     <td>Altura (m): </td>
                     <td>
-                        <input type="number" name="altura" maxlength="5" placeholder="Informe sua altura">
+                        <input type="text" name="altura" maxlength="5" placeholder="Informe sua altura">
                     </td>
                 </tr>
                 <tr>
@@ -32,12 +32,14 @@
                         <input type="text" name="imc" maxlength="5" size="5" value="imc" disabled><b></b>
                     </td>
                 </tr>
+                {% block content%}
                 <tr>
                     <td>Resultado </td>
                     <td>
-                        <input type="text" name="resultado" maxlength="5" size="5" value="resultado" disabled>
+                        <input type="text" name="resultado" maxlength="5" size="5" value="{{ imc }} " disabled>
                     </td>
                 </tr>
+                {% endblock %}
                 <br>
                 <br>
             </table>
